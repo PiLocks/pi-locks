@@ -670,16 +670,6 @@
 .slider__copy {
   margin: 20px 0 0;
 }
-@media (min-width: 1024px) {
-  .slider__copy {
-    position: absolute;
-    top: 10%;
-    right: 0;
-    margin: 0;
-    width: 340px;
-    transform: translateX(calc(100% + 40px));
-  }
-}
 .slider__tag {
   margin: 0 0 8px;
   color: var(--c-grey);
