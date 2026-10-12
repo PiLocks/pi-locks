@@ -1292,6 +1292,16 @@
   margin-bottom: 0;
 }
 
+/*
+  A prose block that ends in a list which is immediately followed by another
+  block (Approach: the engagement list, then the process steps). The full
+  --rhythm bottom padding left a void after the last list item; this halves
+  it so the next block follows at a normal section gap.
+*/
+.prose--tight {
+  padding-bottom: var(--sp-6);
+}
+
 .cardgrid {
   display: grid;
   grid-template-columns: 1fr;
@@ -1349,12 +1359,22 @@
 }
 
 /* team roles — typographic, no stock portraits */
+/*
+  Trailing space after the last role card is one item-padding, not a full
+  --rhythm. The old value stacked the card's own bottom padding on top of a
+  whole section gap, leaving a void ~2x the gap between the cards.
+*/
 .rolelist {
   display: grid;
   grid-template-columns: 1fr;
   gap: 0;
   border-top: 1px solid var(--c-hairline);
-  padding: 0 0 var(--rhythm);
+  padding: 0 0 var(--sp-5);
+}
+@media (min-width: 768px) {
+  .rolelist {
+    padding: 0 0 var(--sp-6);
+  }
 }
 .rolelist__item {
   display: grid;

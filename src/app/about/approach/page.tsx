@@ -64,7 +64,7 @@ export default function Approach() {
       </section>
 
       <section className="container">
-        <div className="prose">
+        <div className="prose prose--tight">
           <h2 className="prose__label">Engagement Types</h2>
           <div className="prose__body">
             <ul className="ticks ticks--lg">
