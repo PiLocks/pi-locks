@@ -181,6 +181,17 @@ textarea {
   color: var(--c-white);
 }
 
+/* keyboard focus stays visible and on-brand; nothing here removes the
+   default ring, it only makes it consistent across links and buttons */
+:focus-visible {
+  outline: 2px solid var(--c-black);
+  outline-offset: 3px;
+}
+.band :focus-visible,
+.hero :focus-visible {
+  outline-color: var(--c-white);
+}
+
 .container {
   position: relative;
   margin: 0 auto;

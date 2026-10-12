@@ -396,8 +396,9 @@
 }
 /* generous vertical padding keeps each link a comfortable tap target */
 .ftr__col a {
-  display: inline-block;
-  padding: 10px 0;
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--tap);
   font-size: 1.4rem;
   line-height: 1.4;
   transition: opacity 300ms ease;
@@ -730,20 +731,45 @@
 .band .media {
   border-radius: 0;
 }
-.band .media::after {
+/*
+  Scrim for the band caption.
+
+  Two corrections here. It had `to left`, which put the dark end on the
+  right-hand side, while the caption sits bottom-left — so the white heading
+  was landing on the brightest, unprotected part of the photograph. It is
+  now anchored to the left and bottom, where the text actually is.
+
+  It is also scoped with :has() so it only applies where a caption exists.
+  The five captionless bands (About, Approach, History, Impact, Contact)
+  were carrying a one-sided dark gradient across the image for no reason.
+*/
+.band:has(.band__cap) .media::after {
   content: "";
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background: linear-gradient(to left, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0) 50%);
+  background:
+    linear-gradient(to right, rgba(0, 0, 0, 0.66), rgba(0, 0, 0, 0) 55%),
+    linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0) 50%);
 }
+/*
+  Full width so the inner .container keeps the same left gutter as every
+  other block on the page. Previously this was left:0 with a 70% max-width
+  and no `right`, so it shrink-wrapped to its text and the container inside
+  inherited that width — the caption ended up flush against the viewport
+  edge with no gutter at all. The text column is constrained on the heading
+  instead.
+*/
 .band__cap {
   position: absolute;
   left: 0;
+  right: 0;
   bottom: 8%;
   z-index: 2;
   color: var(--c-white);
-  max-width: 70%;
+}
+.band__cap h2 {
+  max-width: 20ch;
 }
 @media (min-width: 1024px) {
   .band__cap {
@@ -1659,6 +1685,9 @@
   }
   .journey--stack .journey__body {
     grid-column: 2;
+    /* the 1fr column runs to ~1050px at 1440 — cap the measure so the
+       paragraph stays readable instead of tracking the full width */
+    max-width: 62ch;
   }
 }
 @media (min-width: 1024px) {
