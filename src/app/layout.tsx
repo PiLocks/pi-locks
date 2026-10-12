@@ -57,8 +57,20 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={gotham.variable}>
+    <html lang="en" className={gotham.variable} suppressHydrationWarning>
       <body>
+        {/*
+          Arm the reveal animation only once this script has run. It is first
+          in the body, so it executes before any page content is painted and
+          there is no flash. If JS is disabled or the script is blocked,
+          `reveal-armed` is never set and every `.reveal` section stays
+          visible — the reveal effect is enhancement, never a requirement.
+        */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: "document.documentElement.classList.add('reveal-armed')",
+          }}
+        />
         <SiteHeader />
         <main>{children}</main>
         <SiteFooter />
