@@ -66,7 +66,7 @@ export default function SiteFooter() {
 
         <div className="ftr__base">
           <div className="ftr__addr">
-            <h4>Pi Lock Integration INC.</h4>
+            <h4>Pi Locks Integration INC.</h4>
             <p>
               #1 - 1322 Ketch Court, Coquitlam, BC V3K 6W1
             </p>
@@ -74,7 +74,7 @@ export default function SiteFooter() {
           <div className="ftr__legal">
             <Link href="/privacy-policy">Privacy Policy</Link>
             <Link href="/terms-conditions">Terms &amp; Conditions</Link>
-            <span>© {new Date().getFullYear()} Pi Lock Integration INC.</span>
+            <span>© {new Date().getFullYear()} Pi Locks Integration INC.</span>
           </div>
         </div>
       </div>
@@ -85,7 +85,7 @@ export default function SiteFooter() {
 function WordmarkFooter() {
   return (
     <svg
-      viewBox="0 0 190 29"
+      viewBox="0 0 250 29"
       role="img"
       aria-label="Pi Locks"
       fill="currentColor"
@@ -98,8 +98,10 @@ function WordmarkFooter() {
         fontSize="25"
         fontWeight="500"
         letterSpacing="-0.5"
+        textLength="250"
+        lengthAdjust="spacingAndGlyphs"
       >
-        Pi Lock Integration INC.
+        Pi Locks Integration INC.
       </text>
     </svg>
   );
