@@ -15,7 +15,7 @@ export function Wordmark({ className = "" }: { className?: string }) {
   return (
     <svg
       className={className}
-      viewBox="0 0 190 29"
+      viewBox="0 0 250 29"
       role="img"
       aria-label="Pi Locks"
       fill="currentColor"
@@ -27,6 +27,8 @@ export function Wordmark({ className = "" }: { className?: string }) {
         fontSize="25"
         fontWeight="500"
         letterSpacing="-0.5"
+        textLength="250"
+        lengthAdjust="spacingAndGlyphs"
       >
         Pi Lock Integration INC.
       </text>
