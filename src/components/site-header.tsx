@@ -28,7 +28,7 @@ export function Wordmark({ className = "" }: { className?: string }) {
         fontWeight="500"
         letterSpacing="-0.5"
       >
-        PI LOCKS
+        Pi Lock Integration INC.
       </text>
     </svg>
   );
