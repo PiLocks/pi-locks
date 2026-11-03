@@ -74,7 +74,7 @@ export default function SiteFooter() {
           <div className="ftr__legal">
             <Link href="/privacy-policy">Privacy Policy</Link>
             <Link href="/terms-conditions">Terms &amp; Conditions</Link>
-            <span>© {new Date().getFullYear()} Pi Locks</span>
+            <span>© {new Date().getFullYear()} Pi Lock Integration INC.</span>
           </div>
         </div>
       </div>
@@ -99,7 +99,7 @@ function WordmarkFooter() {
         fontWeight="500"
         letterSpacing="-0.5"
       >
-        PI LOCKS
+        Pi Lock Integration INC.
       </text>
     </svg>
   );
