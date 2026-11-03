@@ -66,7 +66,7 @@ export default function SiteFooter() {
 
         <div className="ftr__base">
           <div className="ftr__addr">
-            <h4>Pi Locks</h4>
+            <h4>Pi Lock Integration INC.</h4>
             <p>
               #1 - 1322 Ketch Court, Coquitlam, BC V3K 6W1
             </p>
